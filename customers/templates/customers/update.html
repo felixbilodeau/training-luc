@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Customer</title>
+</head>
+<body>
+    <h1>Update Customer:</h1>
+    <span><a href="{% url "customers:index" %}">Back to customer list</a></span>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

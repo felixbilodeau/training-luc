@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+</head>
+<body>
+    <h1>Customers List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Created</th>
+                <th>Modified</th>
+                <th>User</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.created }}</td>
+                    <td>{{ customer.modified }}</td>
+                    <td>{{ customer.user.pk }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.date_of_birth }}</td>
+                    <td><a href="{% url "customers:update" pk=customer.pk %}">Update</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
